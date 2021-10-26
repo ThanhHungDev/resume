@@ -1,0 +1,199 @@
+.homepage{
+    .distribute{
+        &__head{
+            
+            padding: 15px 30px;
+            background-color: #f2f2f2;
+            &--title{
+                color: #3f3f3f;
+                font-weight: 900;
+                margin: 0;
+                padding: 0 10px;
+                font-size: 20px;
+            }
+            &--des{
+                color: #3f3f3f;
+                font-weight: 900;
+                margin: 0;
+                padding: 0 10px 0 30px;
+                font-size: 16px;
+            }
+        }
+
+        &__title{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            align-items: center;
+            padding: 20px 0;
+
+            &--image{
+                width: initial;
+                height: auto;
+            }
+            &--text{
+                color: #00b0f0;
+                font-weight: 900;
+                margin: 0;
+                padding: 0;
+                font-size: 18px;
+                padding-left: 10px;
+            }
+        }
+
+        &__text{
+            color: #3f3f3f;
+            font-weight: 900;
+            margin: 0;
+            padding: 0 0 20px 0;
+            font-size: 20px;
+            text-align: left;
+            
+        }
+        .context{
+            display: flex;
+            align-items: center;
+            @include ScreenMax(SM ){
+                flex-direction: column-reverse;
+            }
+
+            &__wrapper{
+                padding-left: 40px;
+                @include ScreenMax(SM ){
+                    padding-left: 0;
+                }
+            }
+
+            &__item{
+                flex: 2;
+                text-align: center;
+                img{
+                    width: auto;
+                }
+                &:first-child{
+                    flex: 3;
+                }
+            }
+            &__box{
+                text-align: left;
+                &--link{
+                    padding: 30px 0 20px;
+                    display: block;
+                    color: $gray-900;
+                    &:hover{ color: #00b0f0; }
+                }
+                &--wrapper{
+                    padding: 0;
+                    margin: 0;
+                    
+                }
+                &--group{
+                    padding-bottom: 20px;
+                    span{
+                        font-size: 16px;
+                        font-weight: 600;
+                        &:first-child{
+                            color: #00b0f0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .legend{
+            border: 2px solid $gray-500;
+            padding: 15px;
+            border-radius: 10px;
+            position: relative;
+
+            &__title{
+                position: absolute;
+                top: 0;
+                left: 50%;
+                padding: 0 15px;
+                color: #00b0f0;
+                font-weight: bold;
+                font-size: 16px;
+                text-align: center;
+                margin: 0;
+                width: 100%;
+                
+                @include render-transform(translate( -50%, -50% ));
+
+                span{
+                    position: relative;
+                    &:after{
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: -15px;
+                        right: -15px;
+                        bottom: 0;
+                        background-color: white;
+                        z-index: -1;
+                    }
+                }
+            }
+            &__content{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &--item{
+                    flex: 1;
+                    text-align: center;
+                    position: relative;
+                    padding: 30px 15px;
+
+                    img{ width: auto; max-width: 270px;}
+                    p{
+                        font-size: 13px;
+                        font-weight: 600;
+                        padding: 15px 30px;
+                    }
+
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        z-index: 2;
+                        width: 60px;
+                        height: 45px;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        box-sizing: border-box;
+                        background-image: url(/img/arrow-paperless-item.png);
+                        @include render-transform(translate(50%, -50%));
+                        
+                    }
+                    &:last-child{ 
+                        &::after{
+                            content: unset;    
+                        }    
+                    }
+                    
+                }
+
+                @include ScreenMax(MD){
+                    flex-direction: column;
+                    align-items: center;
+
+                    &--item{
+                        p{
+                            padding: 30px 0;
+                        }
+                        &::after{
+                            right: 50%;
+                            top: unset;
+                            bottom: 0;
+                            @include render-transform(translate(50%, 0) rotate(90deg));
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}

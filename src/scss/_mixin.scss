@@ -1,0 +1,194 @@
+@mixin render-gradient($deg, $start, $end ){
+
+  background: -moz-linear-gradient($deg, $start, $end) !important;
+  background: -webkit-linear-gradient($deg, $start, $end) !important;
+  background: -o-linear-gradient($deg,$start, $end) !important;
+  background: -ms-linear-gradient($deg, $start, $end) !important;
+  background: linear-gradient($deg, $start, $end) !important;
+}
+
+// Make gradient
+@mixin make-gradient($name, $value) {
+  .#{$name}-gradient {
+
+    @include render-gradient(40deg, map-get($value, start), map-get($value, end));
+  }
+}
+
+// Make gradient
+@mixin make-gradient-rgba($name, $value) {
+  .#{$name}-gradient-rgba {
+    
+    @include render-gradient(40deg, map-get($value, start), map-get($value, end));
+  }
+}
+
+// Make gradient
+@mixin make-bg-gradient($name, $value) {
+  .bg-gradient-#{$name} {
+
+    @include render-gradient(131.93deg, map-get($value, start), map-get($value, end));
+  }
+}
+
+
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+  }
+}
+
+
+//// progress mixin
+@mixin progress-loading($color) {
+  .progress-loadding{
+    background-color:$color;
+    &:before{
+      content:'';
+      position:absolute;
+      background-color:inherit;
+      top:0;
+      left:0;
+      bottom:0;
+      will-change:left, right;
+      -webkit-animation:indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+      animation:indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite
+    }
+
+    &:after{
+      content:'';
+      position:absolute;
+      background-color:inherit;
+      top:0;
+      left:0;
+      bottom:0;
+      will-change:left, right;
+      -webkit-animation:indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+      animation:indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+      -webkit-animation-delay:1.15s;
+      animation-delay:1.15s
+    }
+  }
+}
+
+@mixin render-transform($value){
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -o-transform: $value;
+  -ms-transform: $value;
+  transform: $value;
+}
+@mixin render-autofix($key, $value){
+  -webkit-#{$key}: $value;
+  -moz-#{$key}: $value;
+  -o-#{$key}: $value;
+  -ms-#{$key}: $value;
+  #{$key}: $value;
+}
+
+
+$btn-disabled-opacity: .65 !default;
+@mixin btn-interaction($background, $border, $color) {
+  &:hover {
+    background-color: $background;
+    border: 2px solid $border;
+    color: $color;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  &:focus,
+  &.focus {
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    outline: 0;
+  }
+
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & { // stylelint-disable-line selector-no-qualifying-type
+    pointer-events: none;
+    opacity: $btn-disabled-opacity;
+  }
+}
+
+@function is-number($value) {
+  @return type-of($value) == 'number';
+}
+
+
+
+//// define grid min of device
+$MIN_XSM: 375px;   /// <  425px => medium mobile
+$MIN_XS : 425px;   /// <  576px => larger mobile
+$MIN_SM : 576px;   // 576px -> 768px
+$MIN_MD : 768px;   /// 768px -> 991px
+$MIN_LG : 992px;   /// 992px ----> 1199px
+$MIN_XL : 1200px;  /// 1200px - 1320px
+$MIN_XXL: 1320px;  /// 1320px - 1400px
+
+//// là phần từ nhỏ đến lớn, nghĩa là khi code 1 css bất kì mặc định => nó là mobile đến PC, 
+/// nếu có gọi @include vào thì nó sẽ chuyển từ mobile đi PC ví dụ cụ thể là fix màn hình MD trở lên @include Screen(MD)
+@mixin Screen($canvas) {
+  @if $canvas == XSM {
+    @media (min-width:$MIN_XSM)  { @content; } 
+  }@else if $canvas == XS {
+    @media (min-width:$MIN_XS)  { @content; } 
+  }@else if $canvas == SM {
+    @media (min-width: $MIN_SM) { @content; } 
+  }@else if $canvas == MD {
+    @media (min-width: $MIN_MD) { @content; } 
+  }@else if $canvas == LG {
+    @media (min-width: $MIN_LG) { @content; } 
+  }@else if $canvas == XL {
+    @media (min-width: $MIN_XL) { @content; } 
+  }@else if $canvas == XXL {
+    @media (min-width:$MIN_XXL)  { @content; }
+  }@else if(is-number($canvas)){
+    @media (min-width:$canvas)  { @content; }
+  }
+}
+
+
+
+//// define grid min of device
+$MAX_XSM: 425px;   /// <  425px => medium mobile
+$MAX_XS : 576px;   /// <  576px => larger mobile
+$MAX_SM : 768px;   // 576px -> 768px
+$MAX_MD : 991px;   /// 768px -> 991px
+$MAX_LG : 1199px;   /// 992px ----> 1199px
+$MAX_XL : 1320px;  /// 1200px - 1320px
+$MAX_XXL: 1400px;  /// 1320px - 1400px
+
+@mixin ScreenMax($canvas) {
+  @if $canvas == XSM {
+    @media (max-width: $MAX_XSM)  { @content; } 
+  }@else if $canvas == XS {
+    @media (max-width: $MAX_XS)  { @content; } 
+  }@else if $canvas == SM {
+    @media (max-width: $MAX_SM) { @content; } 
+  }@else if $canvas == MD {
+    @media (max-width: $MAX_MD) { @content; } 
+  }@else if $canvas == LG {
+    @media (max-width: $MAX_LG) { @content; } 
+  }@else if $canvas == XL {
+    @media (max-width: $MAX_XL) { @content; } 
+  }@else if $canvas == XXL {
+    @media (max-width: $MAX_XXL)  { @content; }
+  }@else if(is-number($canvas)){
+    @media (max-width: #{$canvas}px)  { @content; }
+  }
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}

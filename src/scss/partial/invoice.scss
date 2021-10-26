@@ -1,0 +1,329 @@
+.invoice{
+    .groupware{
+        padding: 0;
+        .wrapper-head{
+            padding: 15px 40px;
+            background-color: #f2f2f2;
+            .title{
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .description{
+                font-size: 16px;
+                font-weight: bold;
+            }
+        }
+        .wrapper{
+            padding: 40px;
+            .top{
+                .title{
+                    display: flex;
+                    flex-direction: row;
+                    padding-bottom: 20px;
+                    .image{
+                        width: initial;
+                        height: auto;
+                    }
+                    .title-text{
+                        color: #3f3f3f;
+                        font-weight: 900;
+                        margin: 0;
+                        padding: 0 10px;
+                        font-size: 20px;
+                    }
+                }
+            }
+            .content-body{
+                display: flex;
+                flex-direction: column;
+                .flow-chart{
+                    display: flex;
+                    flex-direction: row;
+                    margin: 0 45px;
+                    .col{
+                        box-sizing: border-box;
+                        width: 33%;
+                        margin: auto 0;
+                        .row-img{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            .arrow{
+                                margin: auto;
+                                .img-r{
+                                    width: 65px;
+                                    height: 15px;
+                                }
+                            }
+                        }
+                        .text{
+                            text-align: center;
+                        }
+                    }
+                    .col-01{
+                        .row-img{
+                            .img{
+                                width: 45%;
+                            }
+                        }
+                        .text{
+                            margin-left: 10%;
+                            text-align: left;
+                        }
+                    }
+                    .col-02{
+                        .img{
+                            margin: auto;
+                            width: 80%;
+                        }
+                    }
+                    .col-03{
+                        .img-group{
+                            .row-img{
+                                margin: -10px 0;
+                                .arrow{
+                                    margin-right: 40%;
+                                }
+                                .ar-01{
+                                    .img-r{
+                                        transform: rotate(-15deg);
+                                    }
+                                }
+                                .ar-03{
+                                    .img-r{
+                                        transform: rotate(15deg);
+                                    }
+                                }
+                                .img{
+                                    position: relative;
+                                    width: 85px;
+                                    height: 85px;
+                                    .building{
+                                        position: absolute;
+                                        top: 0;
+                                        bottom: 0;
+                                        left: 0;
+                                        right: 0;                                        
+                                        width: 85px;
+                                        height: 85px;
+                                        border-radius: 50%;
+                                        overflow: hidden;
+                                    }
+                                    .inv{
+                                        position: absolute;
+                                        top: 50%;
+                                        left: -25px;
+                                        width: 35px;
+                                        transform: translateY(-50%);
+                                        z-index: 1;
+                                    }
+                                }
+                            }
+                        }
+                        .text{
+                            margin-top: 10px;
+                            text-align: right;
+                        }
+                    }
+                }
+                .content-text{
+                    .text-row{
+                        margin: 15px 0;
+                        p{
+                            font-weight: bold;
+                            .number{
+                                color: #00b0f0;
+                            }
+                        }
+                        .first-space{
+                            margin-left: 30px;
+                        }
+                    }
+                }
+                img{
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    vertical-align: unset;
+                }
+            }
+        }
+        @include ScreenMax(SM){
+            .wrapper{
+                .content-body{
+                    .flow-chart{
+                        flex-direction: column;
+                        transform: translateX(20px);
+                        .col{
+                            width: 100%;
+                        }
+                        .col-01{
+                            display: flex;
+                            flex-direction: column;
+                            position: relative;
+                            height: 190px;
+                            .row-img{
+                                flex-direction: column;
+                                .img{
+                                    width: 85px;
+                                    margin: auto;
+                                }
+                                .arrow{
+                                    margin-top: 50px;
+                                    .img-r{
+                                        transform: rotate(90deg);
+                                    }
+                                }
+                            }
+                            .text{
+                                position: absolute;
+                                bottom: 75px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                width: 100%;
+                                margin-left: unset;
+                                text-align: center;
+                            }
+                        }
+                        .col-02{
+                            .img{
+                                width: 85px;
+                            }
+                        }
+                        .col-03{
+                            .img-group{
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                .row-img{
+                                    flex-direction: column;
+                                    margin: 0 15px;
+                                    .arrow{
+                                        margin-right: unset;
+                                        margin-left: unset;
+                                        height: 100px;
+                                    }
+                                    .ar-01{
+                                        .img-r{
+                                            transform: translate(20px, 45px) rotate(105deg);
+                                        }
+                                    }
+                                    .ar-02{
+                                        .img-r{
+                                            transform: translate(10px, 45px) rotate(90deg);
+                                        }
+                                    }
+                                    .ar-03{
+                                        .img-r{
+                                            transform: translateY(45px) rotate(75deg);
+                                        }
+                                    }
+                                }
+                            }
+                            .text{
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include ScreenMax(XS){
+            .wrapper{
+                padding: 40px 0;
+                .content-body{
+                    .flow-chart{
+                        .col{
+                            .row-img{
+                            .arrow{
+                                .img-r{
+                                    width: 50px;
+                                }
+                            }
+                        }
+                        }
+                        .col-01{
+                            height: 180px;
+                            .row-img{
+                                flex-direction: column;
+                                .img{
+                                    width: 80px;
+                                    margin: auto;
+                                }
+                            }
+                            .text{
+                                bottom: 70px;
+                            }
+                        }
+                        .col-02{
+                            .img{
+                                width: 100px;
+                            }
+                        }
+                        .col-03{
+                            .img-group{
+                                .row-img{
+                                    .arrow{
+                                        height: 65px;
+                                    }
+                                    .ar-01{
+                                        .img-r{
+                                            transform: translate(20px, 25px) rotate(105deg);
+                                        }
+                                    }
+                                    .ar-02{
+                                        .img-r{
+                                            transform: translate(10px, 25px) rotate(90deg);
+                                        }
+                                    }
+                                    .ar-03{
+                                        .img-r{
+                                            transform: translateY(25px) rotate(75deg);
+                                        }
+                                    }
+                                    .img{
+                                        width: 65px;
+                                        .inv{
+                                            top: 42%;
+                                            left: -20px;
+                                            width: 26px;
+                                        }
+                                        .building{
+                                            width: 65px;
+                                            height: 65px;
+                                        }
+                                    }
+                                }
+                            }
+                            .text{
+                                text-align: center;
+                            }
+                        }
+                    }
+                    .content-text{
+                        .text-row{
+                            p{
+                                font-size: 14px;
+                                padding: unset;
+                            }
+                        }
+                    }
+                }
+            }            
+        }
+        @include ScreenMax(XSM){
+            .wrapper{
+                .content-body{
+                    .content-text{
+                        .text-row{
+                            p{
+                                font-size: 12px;
+                                padding: unset;
+                            }
+                        }
+                    }
+                }
+            } 
+        }
+    }
+}

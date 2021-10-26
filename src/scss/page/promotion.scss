@@ -1,0 +1,13 @@
+@import "../_variable";
+@import "../_mixin";
+
+
+.promotion{
+    padding-top: 3rem;
+    &__wrapper{
+        
+        max-width: 1100px; 
+        margin: 0 auto; 
+        padding: 0 1.5%;
+    } 
+} 

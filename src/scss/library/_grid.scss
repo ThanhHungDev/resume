@@ -1,0 +1,80 @@
+$padding-grid-col: 15px;
+$column-max      : 12;
+
+$screens: ( XSM, XS, SM, MD, LG, XL, XXL ) !default;
+
+$containers-max-width: (
+    MD: 730px,
+    LG: 970px,
+    XL: 1170px,
+) !default;
+// media queries
+
+.container-fluid {
+    width        : 100%;
+    padding-right: $padding-grid-col;
+    padding-left : $padding-grid-col;
+    margin-right : auto;
+    margin-left  : auto;
+}
+
+.container {
+    padding-right: $padding-grid-col;
+    padding-left : $padding-grid-col;
+    margin-right : auto;
+    margin-left  : auto;
+
+    @each $screen, $_width in $containers-max-width {
+
+        @include Screen($screen) {
+            width: 100%;
+            max-width: $_width;
+        }
+    }
+}
+
+.row {
+    margin-right: -#{$padding-grid-col};
+    margin-left : -#{$padding-grid-col};
+    @include clearfix();
+}
+@for $i from 1 through $column-max {
+
+    .col-#{$i} {
+
+        position     : relative;
+        min-height   : 1px;
+        padding-right: $padding-grid-col;
+        padding-left : $padding-grid-col;
+    }
+}
+@each $name in $screens {
+    @for $i from 1 through $column-max {
+            
+        .col-#{to-lower-case(#{$name})}-#{$i} {
+
+            padding-right: $padding-grid-col;
+            padding-left : $padding-grid-col;
+        }
+    }
+}
+@for $i from 1 through $column-max {
+
+    .col-#{$i} {
+
+        width: (100% * $i) / $column-max;
+        float: left;
+    }
+}
+@each $name in $screens {
+    @include Screen($name) {
+        @for $i from 1 through $column-max {
+            
+            .col-#{to-lower-case(#{$name})}-#{$i} {
+
+                width: (100% * $i) / $column-max;
+                float: left;
+            }
+        }
+    }
+}

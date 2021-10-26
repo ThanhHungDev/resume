@@ -1,0 +1,47 @@
+@mixin render-scroll-custom(){
+    scrollbar-color: rgba(0,0,0,.3) #F5F5F5;
+    scrollbar-width: thin !important;
+    -ms-overflow-style : none;
+
+    &::-webkit-scrollbar{
+      width: 6px;
+      background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar-thumb{
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: #555;
+    }
+
+    &::-moz-scrollbar{
+      width: 6px;
+      background-color: #F5F5F5;
+    }
+
+    &::-moz-scrollbar-thumb{
+      border-radius: 10px;
+      -moz-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: #555;
+    }
+
+    &::-o-scrollbar{
+      width: 6px;
+      background-color: #F5F5F5;
+    }
+
+    &::-o-scrollbar-thumb{
+      border-radius: 10px;
+      -o-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: #555;
+    }
+    &::-ms-scrollbar{
+      width: 6px;
+      background-color: #F5F5F5;
+    }
+
+    &::-ms-scrollbar-thumb{
+      border-radius: 10px;
+      -ms-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: #555;
+    }
+}

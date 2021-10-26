@@ -1,0 +1,239 @@
+.homepage{
+    .attendance{
+        &__head{
+            
+            padding: 15px 30px;
+            background-color: #f2f2f2;
+            &--title{
+                color: #3f3f3f;
+                font-weight: 900;
+                margin: 0;
+                padding: 0 10px;
+                font-size: 20px;
+            }
+            &--des{
+                color: #3f3f3f;
+                font-weight: 900;
+                margin: 0;
+                padding: 0 10px 0 30px;
+                font-size: 16px;
+            }
+        }
+        .blocked{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-grow: 999;
+            .item{
+                position: relative;
+                width: 100%;
+                .item__block{
+                    padding: 10px 40px;
+                }
+            }
+        }
+        .headding__wrapper{
+            padding: 0 5px 30px;
+            .btn__heading{
+                background-color: transparent;
+                border-radius: 4px;
+                font-size: 14px;
+                outline: none;
+                color: #00b0f0;
+                background-color: transparent;
+                border: 2px solid #00b0f0;
+                line-height: 2;
+                padding: 0 .8rem 0.1rem;
+                font-weight: 600;
+                width: 100%;
+                max-width: 340px;
+            }
+        }
+
+        .context{
+            padding: 15px 60px;
+            @include ScreenMax( SM ){ padding: 15px 60px; }
+            @include ScreenMax( XS ){ padding: 15px 0; }
+            &__group{
+                h4{
+                    color: #00b0f0;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+                p{
+                    padding: 5px 0;
+                    margin: 0;
+                    font-size: 14px;
+                }
+            }
+            
+        }
+
+        .wrapper{
+            padding: 60px 30px;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+
+            .collection{
+                width: 200px;
+                display: flex;
+                flex-direction: column;
+                img{
+                    height: 80px;
+                    width: auto;
+                }
+                .item{
+                    &::before{
+                        z-index: 2;
+                        position: absolute;
+                        content: '';
+                        width: 60px;
+                        height: 45px;
+                        top: 20%;
+                        right: 0;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        box-sizing: border-box;
+                        background-image: url(/img/arrow-right-blue.png);
+                        @include render-transform(translateX(30%))
+                    }
+                    &.last{
+                        position: relative;
+                        &::after{
+                            background-image: url(/img/attendance-left-people.png);
+                            z-index: 2;
+                            position: absolute;
+                            content: '';
+                            width: 50px;
+                            height: 90px;
+                            right: 60%;
+                            bottom: 0;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-position: center;
+                            box-sizing: border-box;
+                        }
+                    }
+                }
+            }
+            &__item--mid{
+                display: flex;
+                flex-direction: column;
+                flex-grow: 999;
+                
+                .blocked{
+                    padding: 0 60px;
+                    .item__center{
+                        height: 100%;
+                        width: 100%;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+            &__item--right.collection{
+                
+                .item{
+                    &::before{
+                        z-index: 2;
+                        position: absolute;
+                        content: '';
+                        width: 60px;
+                        height: 45px;
+                        top: 20%;
+                        right: unset;
+                        left: 0;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        box-sizing: border-box;
+                        background-image: url(/img/arrow-right-blue.png);
+                        @include render-transform(translateX(-80%) )
+                    }
+                    &.last{
+                        position: relative;
+                        &::after{
+                            background-image: url(/img/attendance-right-c-people.png)!important;
+                        }
+                    }
+                }
+            }
+
+            @include ScreenMax( SM ){ 
+                flex-direction: column;
+                justify-content: center;
+            
+                .collection{
+                    width: 100%;
+                    .item{
+                        &::before{
+                            top: 100%;
+                            right: 50%;
+                            left: unset;
+                            @include render-transform(translate(50%, 0%) rotate( 90deg))
+                        }
+                    }
+                    .blocked{
+                        flex-direction: row;
+                        margin: 0 auto 60px;
+                        max-width: 800px;
+                    }
+                }
+                &__item--mid{
+                    
+                    .blocked{
+                        padding: 15px;
+                        .item__center{
+                            height: 100%;
+                            min-height: 250px;
+                            width: 100%;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-position: center;
+                            box-sizing: border-box;
+                        }
+                    }
+                }
+                &__item--right.collection{
+                    .blocked{
+                        margin: 60px auto 0;
+                        .item{
+                            &::before{
+                                top: unset;
+                                bottom: 100%;
+                                right: 50%;
+                                left: unset;
+                                @include render-transform(translate(50%, 0%) rotate( 90deg))
+                            }
+                        }
+                    }
+                }
+            }
+            @include ScreenMax( XS ){
+                padding: 60px 0;
+                .collection{
+                    .blocked{
+                        margin: 0 0 60px;
+                    }
+                }
+                &__item--right.collection{
+                    .blocked{
+                        margin: 60px 0 0;
+                    }
+                }
+                .blocked{ 
+                    .item{ 
+                        .item__block{
+                            padding: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}

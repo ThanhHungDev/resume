@@ -1,0 +1,45 @@
+
+connection .line {
+    position:absolute;
+    height:2px;
+    background: transparent!important;
+    border-top: 1px dashed $black;
+    .text {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+    }
+    .arrow {
+        top: -5px;
+        height: 0px;
+        width: 0px;
+        position: absolute;
+        border-bottom: 6px solid transparent;
+        border-top: 6px solid transparent;
+        background-clip: border-box;
+        background: transparent!important;
+    }
+    .arrow-bw {
+        left: 100%;
+        border-left: 12px solid black;
+        // transform: translateX(-12px);
+        @include render-transform(translateY(-2px));
+    }
+    .arrow-fw {
+        border-right: 12px solid black;
+    }
+}
+// .fadein {
+// 	opacity : 0;
+// 	transform : translate(0, 50px);
+// 	transition : all 1s;
+//     .active{
+//         opacity : 1;
+//         transform : translate(0, 0);
+//         position: relative;
+//     }
+//     .line{
+//         transform : translate(0, 50px);
+//     }
+// }

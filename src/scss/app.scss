@@ -1,0 +1,62 @@
+@import "variable";
+@import "mixin";
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;400;500;700&display=swap');
+
+
+ 
+
+$text__color: #2fbff3;
+
+
+.homepage{
+    padding: 15px;
+    font-family: "游ゴシック", "Yu Gothic";
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+    font-weight: bold;
+
+    h4{ 
+        &::after{
+            content: unset!important;
+        }
+        &::before{
+            content: unset!important;
+        }
+    }
+    
+    img{
+        width: 100%;
+        height: auto;
+    }
+} 
+
+@import "./partial/connection.scss";
+@import "./partial/groupware.scss";
+@import "./partial/centralized.scss";
+@import "./partial/brand.scss";
+@import "./partial/intro.scss";
+@import "./partial/trouble.scss";
+@import "./partial/solve.scss";
+@import "./partial/sharing.scss";
+@import "./partial/workflow.scss";
+@import "./partial/convenient.scss";
+@import "./partial/collective.scss";
+@import "./partial/infosharing.scss";
+@import "./partial/analysis.scss"; 
+@import "./partial/attendance.scss";
+@import "./partial/efficiency.scss";
+@import "./partial/paperless.scss";
+@import "./partial/distribute.scss";
+@import "./partial/himplementation.scss";
+@import "./partial/formformat.scss";
+@import "./partial/invoice.scss";
+@import "./partial/service.scss";
+@import "./partial/businessefficiency.scss";
+@import "./partial/introducereport.scss";
+@import "./partial/implementation-02.scss";
+@import "./partial/adjustmentintroduction-01.scss";
+@import "./partial/adjustmentintroduction-02.scss";

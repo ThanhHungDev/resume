@@ -1,0 +1,146 @@
+@import "../_variable";
+@import "../_mixin";
+@import "../_reboot";
+
+.component-contact{
+
+    .form-contact{
+        padding: 20px;
+        max-width: 1150px;
+        margin: 0 auto;
+        @include clearfix();
+
+        .left-infor{
+            width: 100%;
+            float: none;
+        }
+        .right-form-contact{
+            
+            width: 100%;
+            float: none;
+            padding: 0;
+        }
+        @include Screen(SM){
+            .left-infor{
+                width: 40%;
+                float: left;
+            }
+            .right-form-contact{
+                width: 60%;
+                float: left;
+                padding: 0 0 0 30px;
+            }   
+        }
+        .form-input{
+            padding-top: 10px;
+
+            label {
+                font-size: 15px;
+                color: $gray-900;
+                display: block;
+                padding-bottom: 10px;
+            }
+            .error{
+                color: red;
+            }
+            input{
+                display: block;
+                width: 100%;
+                padding: 8px 15px;
+                font-size: 16px;
+                border-radius: 0;
+                border: 1px solid $gray-600;
+                outline: none;
+
+                &:focus{
+                    color: $primary-color-dark;
+                    border: 1px solid $primary-color-dark;
+                }
+            }
+            textarea{
+                width: 100%!important;
+                min-height: 40px;
+                max-height: 150px;
+                resize: none;
+                padding: 10px 15px;
+                border: 1px solid $gray-600;
+                border-radius: 0;
+                font-size: 14px;
+                scrollbar-width: none;
+                margin: 0;
+                text-decoration: none;
+                -ms-overflow-style : none;
+                &:focus{
+                    color: $primary-color-dark;
+                    border: 1px solid $primary-color-dark;
+                }
+            }
+            i{
+                font-style: normal;
+                color: $red;
+            }
+        }
+    }
+
+    .contact-intro{
+        font-size: 23px;
+        color: $orange;
+        padding: 20px 0 10px;
+    }
+    .title-contact{
+        font-size: 18px;
+        color: $gray-700;
+    }
+    .mycompany{
+        font-size: 18px;
+        color: $gray-900;
+        padding: 5px 0;
+    }
+    .contact-address{
+        background: #f2f2f2 none repeat scroll 0 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        display: block;
+        margin: 10px 0;
+        padding: 10px 10px;
+        position: relative;
+    }
+    .intro-chat-contact{
+        font-size: 18px;
+        color: $red;
+    }
+    .btn-send-mail-contact{
+        display: inline-block;
+        color: $body-color;
+        text-align: center;
+        text-decoration: null;
+        white-space: normal;
+        word-wrap: break-word;
+        vertical-align: middle;
+        cursor: pointer;
+        user-select: none;
+        background-color: transparent;
+
+        padding: 0.7rem 1.5rem 0.6rem;
+        font-size: 0.81rem;
+        -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+        -o-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+        margin: 0.375rem;
+        border: 2px solid transparent;
+        -webkit-border-radius: 0.125rem;
+        border-radius: 0.125rem;
+
+        background-color: $indigo ;
+        color: $white;
+        border: 2px solid $indigo ;
+
+        @include btn-interaction($white, color-level($indigo , -8), $indigo )
+    }
+
+    .map-contact{
+        min-height: 400px;
+    }
+}

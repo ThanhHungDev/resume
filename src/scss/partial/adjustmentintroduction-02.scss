@@ -1,0 +1,33 @@
+.adjustmentintroduction{
+    .content{
+        .homepage{
+            .title{
+                .title-cover{
+                    color: #00b0f0;
+                    margin-right: auto;
+                    h3{
+                        padding: 0 15px !important;
+                    }
+                }
+            }
+            .section2-block{
+                background-color: #fff !important;
+            }
+            .chart-container{
+                background-color: #fff !important;
+            }
+            .flex-r{
+                display: flex;
+                flex-direction: row;
+            }
+            img{
+                width: auto;
+            }   
+            @include ScreenMax(SM){
+                .flex-r{
+                    flex-direction: column;
+                }
+            }         
+        }
+    }
+}

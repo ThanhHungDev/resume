@@ -1,0 +1,321 @@
+.business-efficiency{
+    .groupware{
+        padding: 0;
+        .wrapper-head{
+            padding: 15px 40px;
+            background-color: #f2f2f2;
+            .title{
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .description{
+                font-size: 16px;
+                font-weight: bold;
+            }
+        }
+        .wrapper{
+            padding: 40px;
+            .top{
+                .title{
+                    display: flex;
+                    flex-direction: row;
+                    .image{
+                        width: initial;
+                        height: auto;
+                    }
+                    .title-text{
+                        color: #3f3f3f;
+                        font-weight: 900;
+                        margin: 0;
+                        padding: 0 10px;
+                        font-size: 20px;
+                    }
+                }
+                .description{
+                    margin-left: 35px;
+                }
+            }
+            .content-body{
+                display: flex;
+                flex-direction: column;
+                .flow-chart{
+                    display: flex;
+                    flex-direction: row;
+                    margin: 0 45px;
+                    .col{
+                        margin: auto;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        .group-image{
+                            display: flex;
+                            flex-direction: column;
+                            .img{
+                                width: 165px;
+                            }
+                            .text{
+                                width: 210px;
+                                text-align: center;
+                            }
+                        }
+                        .arrow{
+                            margin: auto;
+                            .text-arrow{
+                                position: relative;
+                                width: 75px;
+                                border-radius: 10px;
+                                background-color: #FFC000;
+                                color: #fff;
+                                text-align: center;
+                                span{
+                                    display: inline-block;
+                                    padding: 7px 0;
+                                }
+                                &::after{
+                                    position: absolute;
+                                    bottom: 50%;
+                                    right: -85px;
+                                    content: '';
+                                    width: 350%;
+                                    height: 2px;
+                                    background-color: #FFC000;
+                                    z-index: -1;
+                                }
+                            }
+                        }
+                    }
+                    .col-01{
+                        position: relative;
+                        width: 35%;
+                        .group-image{
+                            position: relative;
+                            &::after{
+                                position: absolute;
+                                content: "";
+                                top: 35px;
+                                right: 49%;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: #00b0f0;
+                            }
+                            &::before{
+                                position: absolute;
+                                content: "";
+                                top: 0;
+                                right: 51%;
+                                width: 2px;
+                                height: 45px;
+                                background-color: #00b0f0;
+                                z-index: 1;
+                            }
+                            .img{
+                                position: relative;
+                                &::before{
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    content: '';
+                                    width: 38%;
+                                    height: 2px;
+                                    background-color: #00b0f0;
+                                }
+                                &::after{
+                                    position: absolute;
+                                    top: 68px;
+                                    right: 0;
+                                    content: "";
+                                    width: 18px;
+                                    height: 2px;
+                                    background-color: #ffc000;
+                                }
+                            }
+                        }
+                        .arrow{
+                            margin-right: 0;
+                        }
+                        &::after{
+                            position: absolute;
+                            left: 100px;
+                            top: 0;
+                            content: "";
+                            width: 100%;
+                            height: 2px;
+                            background-color: #00B0F0;
+                            z-index: -1;
+                        }
+                    }
+                    .col-02{
+                        width: 25%;
+                        .group-image{
+                            padding-top: 15px;
+                            .img{
+                                position: relative;
+                                width: 85px;
+                                margin: auto;
+                                &::before{
+                                    position: absolute;
+                                    top: 12.5px;
+                                    left: -11px;
+                                    content: "";
+                                    width: 0;
+                                    border: 7px solid transparent;
+                                    border-left: 12px solid #00b0f0;
+                                }
+                            }
+                        }
+                    }
+                    .col-03{
+                        width: 35%;
+                        .arrow{
+                            margin-left: 0;
+                        }
+                    }
+                }
+                .content-text{
+                    .text-row{
+                        margin: 15px 0;
+                        p{
+                            font-weight: bold;
+                            .number{
+                                color: #00b0f0;
+                            }
+                        }
+                        .first-space{
+                            margin-left: 30px;
+                        }
+                    }
+                }
+                img{
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    vertical-align: unset;
+                }
+            }
+        }
+        @include ScreenMax(SM){
+            .wrapper{
+                .content-body{
+                    .flow-chart{
+                        flex-direction: column;
+                        .col{
+                            .group-image{
+                                align-items: center;
+                            }
+                            .arrow{
+                                .text-arrow{
+                                    &::after{
+                                        width: 2px;
+                                        height: 120px;
+                                        bottom: -60px;
+                                        right: 35px;
+                                    }
+                                }
+                            }
+                        }
+                        .col-01{
+                            flex-direction: column;
+                            .group-image{
+                                &::before, &::after{
+                                    content: unset;
+                                }
+                                .img{
+                                    &::after, &::before{
+                                        content: unset;
+                                    }
+                                }
+                            }
+                            .arrow{
+                                margin-right: unset;
+                                margin: 25px auto;
+                                .text-arrow{
+                                    &::before{
+                                        position: absolute;
+                                        width: 2px;
+                                        height: 120px;
+                                        content: '';
+                                        bottom: -60px;
+                                        right: -1px;
+                                        background-color: #00b0f0;
+                                    }
+                                }
+                            }
+                            &::after{
+                                content: unset;
+                            }
+                            &::before{
+                                content: '';
+                            }
+                        }
+                        .col-02{
+                            .group-image{
+                                .img{
+                                    &::before{
+                                        top: -12px;
+                                        right: -2px;
+                                        left: unset;
+                                        border-top: 12px solid #00b0f0;
+                                        border-left: 7px solid transparent;
+                                    }
+                                }
+                            }
+                        }
+                        .col-03{
+                            flex-direction: column;
+                            .arrow{
+                                margin-right: unset;
+                                margin: 25px auto;
+                            }
+                            .group-image{
+                                .img{
+                                    position: relative;
+                                    &::before{
+                                        position: absolute;
+                                        top: 0;
+                                        right: 80px;
+                                        content: "";
+                                        width: 2px;
+                                        height: 32px;
+                                        background-color: #ffc000;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include ScreenMax(XS){
+            .wrapper{
+                padding: 40px 0;
+            }          
+        }
+        @include ScreenMax(320){
+            .wrapper{
+                .content-body{
+                    .flow-chart{
+                        .col-02{
+                            .group-image{
+                                .img{
+                                    &::before{
+                                        right: -4px;
+                                    }
+                                }
+                            }
+                        }
+                        .col-03{
+                            .group-image{
+                                .img{
+                                    &::before{
+                                        right: 78px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

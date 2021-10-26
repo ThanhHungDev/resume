@@ -1,0 +1,110 @@
+
+// <div class="progress progress-success">
+// <div class="progress-loadding"></div>
+// </div>
+// <div class="progress progress-success">
+// <div class="progress-bar"></div>
+// </div>
+// <div class="progress progress-success bg-color-indeterminate">
+// <div class="progress-bar"></div>
+// </div>
+
+.progress-bar {
+  box-shadow: none;
+  height: .25rem;
+  border-radius: 0;
+  background-color: #acece6;
+}
+
+.progress{
+  position:relative;
+  height:4px;
+  display:block;
+  width:100%;
+  border-radius:2px;
+  margin:.5rem 0 1rem 0;
+  overflow:hidden;
+
+  
+  // Generate contextual modifier classes for colorizing the progress.
+
+  @each $color, $value in $colors{
+    &.progress-#{$color} { 
+
+      background-color:color-level($value, -8);
+      @include progress-loading(color-level($value, 4));
+
+      .progress-bar{
+        background-color: $value;
+      }
+    }
+  }
+  &.bg-color-indeterminate {
+    background-color: #acece6;
+  }
+  @each $name, $color in $colors {
+  
+    &.bg-color-#{""+$name} {
+      background-color: $color;
+    }
+  }
+  // scss-docs-end alert-modifiers
+
+}
+
+@-webkit-keyframes indeterminate{
+  0%{
+      left:-35%;
+      right:100%
+  }
+  60%{
+      left:100%;
+      right:-90%
+  }
+  100%{
+      left:100%;
+      right:-90%
+  }
+}
+@keyframes indeterminate{
+  0%{
+      left:-35%;
+      right:100%
+  }
+  60%{
+      left:100%;
+      right:-90%
+  }
+  100%{
+      left:100%;
+      right:-90%
+  }
+}
+@-webkit-keyframes indeterminate-short{
+  0%{
+      left:-200%;
+      right:100%
+  }
+  60%{
+      left:107%;
+      right:-8%
+  }
+  100%{
+      left:107%;
+      right:-8%
+  }
+}
+@keyframes indeterminate-short{
+  0%{
+      left:-200%;
+      right:100%
+  }
+  60%{
+      left:107%;
+      right:-8%
+  }
+  100%{
+      left:107%;
+      right:-8%
+  }
+}

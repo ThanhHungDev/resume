@@ -1,0 +1,171 @@
+.homepage{
+    .collective{
+        
+        &__title{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            align-items: center;
+            padding: 0 0 20px;
+
+            &--image{
+                width: initial;
+                height: auto;
+            }
+            &--text{
+                color: #00b0f0;
+                font-weight: 900;
+                margin: 0;
+                padding: 0;
+                font-size: 16px;
+                padding-left: 10px;
+            }
+        }
+
+        .content{
+            display: flex;
+            flex-direction: row;
+            @include ScreenMax( MD ){ 
+                flex-direction: column;
+                &__right{
+                    margin: 0 auto;
+                }
+            }
+            
+            &__bot{
+                font-size: 20px;
+                font-weight: 600;
+                text-align: right;
+                @include ScreenMax( MD ){ text-align: center; }
+                @include ScreenMax( SM ){ font-size: 16px; }
+                @include ScreenMax( XS ){ font-size: 15px; }
+            }
+            &__left{
+
+                flex: 2;
+            }
+            &__right{
+                flex: 1
+            }
+            &__wrapper{
+                display: flex;
+                flex-direction: row;
+            }
+            @include ScreenMax( SM ){ 
+                flex-direction: column;
+                &__right{
+                    margin: 0 auto;
+                }
+                &__wrapper{
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+                }
+                .item{
+                    margin: 15px auto;
+                }
+            }
+            
+        }
+
+        .item{
+            border: 2px solid $gray-300;
+            border-radius: 10px;
+            padding: 25px;
+            max-width: 400px;
+            margin: 5px;
+            
+
+            .wrapper{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+            }
+            &__content--data{
+                padding: 30px 0 15px;
+            }
+            .content__group{
+                padding: 5px 10px 5px;
+                line-height: 1.4;
+                display: flex;
+                flex-direction: row;
+                input[type=checkbox]{
+                    display: inline-block;
+                    margin-top: 5px;
+                }
+                label{
+                    font-size: 12px;
+                    font-weight: 600; /// edit font 500 to 600 
+                    padding-left: 5px;
+                    padding-top: 3px;
+                    display: inline-block;
+                    text-align: left;
+                    a{
+                        color: #2fbff3;
+                        
+                    }
+                }
+            }
+
+            &__title{
+                display: flex;
+                padding-bottom: 20px;
+                align-items: center;
+                &--number{
+                    color: #00b0f0;
+                    font-weight: 900;
+                    margin: 0;
+                    padding: 0;
+                    font-size: 24px;
+                }
+                &--text{
+                    font-size: 16px;
+                    font-weight: 600;
+                    padding-left: 5px;
+                    line-height: 1.2;
+                }
+            }
+            .legend{
+                border: 2px solid #00b0f0;
+                padding: 15px;
+                border-radius: 10px;
+                position: relative;
+
+                &__title{
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    padding: 0 15px;
+                    color: #00b0f0;
+                    font-weight: bold;
+                    font-size: 13px;
+                    text-align: center;
+                    margin: 0;
+                    width: 100%;
+                    
+                    @include render-transform(translate( -50%, -50% ));
+
+                    span{
+                        position: relative;
+                        &:after{
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: -15px;
+                            right: -15px;
+                            bottom: 0;
+                            background-color: white;
+                            z-index: -1;
+                        }
+                    }
+                }
+                &__des{
+                    font-size: 13px;
+                    font-weight: bold;
+                }
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,117 @@
+.homepage{
+    .intro{
+        padding: 30px;
+        @include ScreenMax(SM){
+            padding: 15px;
+        }
+        @include ScreenMax(XS){
+            padding: 0;
+        }
+        &__title{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            align-items: center;
+            padding: 0 0 20px;
+
+            &--image{
+                width: initial;
+                height: auto;
+            }
+            &--text{
+                color: #3f3f3f;
+                font-weight: 900;
+                margin: 0;
+                padding: 0 10px;
+                font-size: 20px;
+            }
+        }
+        &__list{
+            padding: 15px 30px;
+            margin: 0;
+            @include ScreenMax(SM){
+                padding: 15px;
+            }
+            @include ScreenMax(XS){
+                padding: 0;
+            }
+            &--wrapper{
+                position: relative;
+            }
+        }
+        &__item{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            padding: 10px 0;
+            list-style: none;
+            border-bottom: 1px solid #dadce0;
+            line-height: 1.3;
+            margin-bottom: 15px;
+
+            &::after{
+                position: absolute;
+                content: "";
+                bottom: 0;
+                left: 0;
+                width: 100px;
+                z-index: 111;
+                height: 2px;
+                background-color: #555;
+            }
+            &-number{
+                padding-right: 15px;
+                font-weight: 800;
+                color: #2fbff3;
+            }
+            &-link{
+                color: $gray-800;
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 1.4;
+                text-decoration: none;
+
+                &:hover{
+                    color: #0563c1;
+                }
+            }
+            &-image{
+                padding-right: 15px;
+                img{
+                    width: initial;
+                    height: auto;
+                }
+            }
+            &:nth-child(n + 6){
+                // background-color: lawngreen;
+                .intro__item-link{
+                    max-width: 400px;
+                    @include ScreenMax(900){
+                        max-width: 300px;
+                    }
+                    @include ScreenMax(850){
+                        max-width: unset;
+                    }
+                }
+            }
+        }
+        &__bg-right{
+            position: absolute;
+            content: "";
+            right: 0;
+            bottom: 15px;
+            width: initial;
+            height: auto;
+            @include ScreenMax(850){
+                position: relative;
+                padding-top: 30px;
+                text-align: center;
+                img{
+                    width: initial;
+                }
+            }
+        }
+    }
+}
