@@ -9,14 +9,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/css/kube.min.css" />
     <link rel="stylesheet" href="/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/css/custom.css" />
-    <link rel="shortcut icon" href="/img/favicon.png" />
+	<link rel="stylesheet" href="/css/app.css" />
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+
+	<link rel="icon" type="image/png" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#62854F">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#62854F">
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico"/>
+
 	<style>
 		.intro h1:before {
 			/* Edit this with your name or anything else */
-			content: 'HUNGTT';
+			content: 'HERO';
 		}
 	</style>
 </head>
@@ -51,8 +73,12 @@
 				<div class="unit-80">
 					<h1>Nơi làm việc: <br><span id="typed"></span></h1>
 				</div>
-				<p> Công việc của mình là 1 fullstack web developer php - nodejs, ở 
-					<a href="http://www.management-partners.co.jp/">Management Partners Inc</a> mình có cơ hội để phát triển website giúp cho việc tìm và kết nối công việc nhiều người lại với nhau. <br> 
+				<p> Công việc của mình là 1 fullstack web developer php - nodejs 
+					<br /> 
+					ở 
+					<a href="http://www.management-partners.co.jp/">Management Partners Inc</a> 
+					mình có cơ hội để phát triển website giúp cho việc tìm và kết nối công việc nhiều người lại với nhau. 
+					<br> 
 				</p>
 			</div>
 		</div>
@@ -61,21 +87,26 @@
 	<!-- Work Experience -->
 	<div class="work section second" id="experiences">
 		<div class="container">
-			<h1>Work<br>Experiences</h1>
+			<h1>Kinh<br>Nghiệm</h1>
 			<ul class="work-list">
-				<li>2014-2015</li>
-				<li><a href="#">PT Traveloka Indonesia</a></li>
-				<li>Web Designer</li>
+				<li>07/2016 - 03/2017</li>
+				<li><a href="#">TNHH VIETSPACE</a></li>
+				<li>Front end developer</li>
 			</ul>
 			<ul class="work-list">
-				<li>2014-2015</li>
-				<li><a href="#">Wego</a></li>
-				<li>UI/UX Designer</li>
+				<li>03/2017-11/2017</li>
+				<li><a href="#">Tokyo design Room</a></li>
+				<li>PHP Developer</li>
 			</ul>
 			<ul class="work-list">
-				<li>2014-2015</li>
-				<li><a href="#">Garuda Indonesia</a></li>
-				<li>System Designer</li>
+				<li>11/2017-03/2019	</li>
+				<li><a href="#">Van Phong Thiet Ke Web Nhanh 247</a></li>
+				<li>PHP Developer</li>
+			</ul>
+			<ul class="work-list">
+				<li>03/2019-03/2020	</li>
+				<li><a href="#">Van Phong Thiet Ke Web Nhanh 247</a></li>
+				<li>PHP Developer</li>
 			</ul>
 		</div>
 	</div>
@@ -122,13 +153,6 @@
 		</div>
 	</div>
 
-	<!-- Quote -->
-	<div class="quote">
-		<div class="container text-centered">
-			<h1>fight against the ugliness.</h1>
-		</div>
-	</div>
-
 	<footer>
 		<div class="container">
 			<div class="units-row">
@@ -155,7 +179,7 @@
     <script>
 		function newTyped(){}$(function(){$("#typed").typed({
 		// Change to edit type effect
-		strings: ["Shinjuku Tokyo - Nhật", "Định hướng tương lai...?!", "Quay về tp.HCM phát triển"],
+		strings: ["Shinjuku Tokyo", "Định hướng tương lai...?!", "Quay về tp.HCM"],
 
 		typeSpeed:90,backDelay:700,contentType:"html",loop:!0,resetCallback:function(){newTyped()}}),$(".reset").click(function(){$("#typed").typed("reset")})});
     </script>

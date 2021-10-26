@@ -611,3 +611,41 @@ $box-models: (
 .wrap-break-word {
   overflow-wrap: break-word !important;
 }
+
+
+
+
+
+
+
+
+
+
+// Base
+
+h1, h2, h3, h4, h5, h6 { 
+	font-family:  $playfair;
+	color: $gray-800; 
+}
+
+a, p { 
+	font-family: $lato; 
+	color: $gray-800;
+	font-size: em(16);
+	line-height: em(28);
+}
+
+a {
+  color: $link-color;
+	&:hover {
+		text-decoration: none!important;
+		color: $link-hover-color!important;
+		@include transition(all, 0.2s, ease-in-out);
+	}
+}
+
+.container {
+    margin: auto;
+    max-width: 767px;
+    padding: 0 20px;
+}
