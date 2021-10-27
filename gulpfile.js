@@ -47,12 +47,12 @@ gulp.task('js', function () {
         .pipe(gulp.dest(path.join(__dirname, '/dist/js/')))
 });
 gulp.task('fileinclude', function () {
-    return gulp.src(["src/pages/*.html"])
+    return gulp.src(["src/*.html"])
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'
         }))
-        .pipe(gulp.dest(path.join(__dirname, '/dist/pages/')))
+        .pipe(gulp.dest(path.join(__dirname, '/dist/')))
 })
 // RELOAD
 gulp.task('reload', function () {
@@ -65,7 +65,7 @@ gulp.task('watch', function () {
         }
     });
     /// cấu hình html
-    gulp.watch('src/pages/*.html', gulp.series('fileinclude')).on("change", browserSync.reload)
+    gulp.watch('src/*.html', gulp.series('fileinclude')).on("change", browserSync.reload)
     gulp.watch('src/partial/*.html', gulp.series('fileinclude')).on("change", browserSync.reload)
     /// cấu hình cho js
     gulp.watch("src/javascript/**.js", gulp.series('js')).on("change", browserSync.reload)
