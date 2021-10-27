@@ -43,7 +43,7 @@ gulp.task('js', function () {
     return gulp.src("src/javascript/**.js")
         //    .pipe(cache('linting'))
         .pipe(uglify())/// anh thêm vào cho thấy được cái tên file nó sẽ build nhìn cho dễ
-        // .pipe(rename({ suffix: '.min' }))
+        .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(path.join(__dirname, '/dist/js/')))
 });
 gulp.task('fileinclude', function () {
