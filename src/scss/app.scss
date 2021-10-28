@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import "variable";
 @import "mixin";
 @import "reboot";
@@ -88,11 +89,11 @@
 
 		li {
 			list-style: none;
-			font-size: em(15);
+			font-size: math.div(15, 16);
 			color: lighten($gray-800, 35%);
 			a {
 				padding-bottom: 5px;
-				font-size: em(19);
+				font-size: math.div(19, 16);
 				font-weight: 700;
 				text-decoration: none;
 				border-bottom: 1px solid lighten($gray-800, 50%);
@@ -104,24 +105,13 @@
 	}
 }
 
-.award {
-	.award-list {
-		margin-left: 0px;
-		li {
-			&:first-child {
-				font-size: em(15);
-				color: lighten($gray-800, 35%);
-			}
-		}
-	}
-}
 
 .skills {
 	.skill-list {
 		margin-left: 0px;
 		li {
 			&:first-child {
-				font-size: em(15);
+				font-size: math.div(15, 16);
 				color: lighten($gray-800, 35%);
 			}
 		}
@@ -137,7 +127,7 @@ footer {
 			display: inline;
 			margin-left: 20px;
 			a {
-				font-size: em(20);
+				font-size: math.div(20, 16);
 				color: lighten($gray-800, 40%)
 			}
 		}

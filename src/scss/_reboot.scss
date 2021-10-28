@@ -445,6 +445,12 @@ table {
     color: $color;
   }
 }
+
+@each $name, $color in $colors {
+  .itext-color-#{"" + $name} {
+    color: $color!important;
+  }
+}
 @each $name, $color in $colors {
   .border-color-#{"" + $name} {
     border-color: $color;
