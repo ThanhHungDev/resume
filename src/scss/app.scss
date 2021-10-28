@@ -70,15 +70,17 @@
 			z-index: -1;
 			color: lighten($green-dark, 83%);
 		}
+		.wrapper__job{
+			line-height: 53px;
+            min-height: 110px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            text-transform: capitalize;
+		}
 		span {
 			font-size: 40px;
-            // line-height: 40px;
-            // min-height: 80px;
-            // overflow: hidden;
-            // display: -webkit-box;
-            // -webkit-line-clamp: 2;
-            // -webkit-box-orient: vertical;
-            // text-transform: capitalize;
 		}
 	}
 }
