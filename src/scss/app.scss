@@ -3,6 +3,7 @@
 @import "mixin";
 @import "reboot";
 @import "keyframes/typed";
+@import "library/table.scss";
 
 // Navigation
 .main-nav {
@@ -11,9 +12,11 @@
 	nav {
 		ul li {
 			a {
+				cursor: pointer;
 				color: $green-dark; //darken($link-color, 15%) lighten(, 35%);
 			}
 			&.active a{
+				cursor: pointer;
 				color: lighten($green-dark, 50%);
 			}
 		}
