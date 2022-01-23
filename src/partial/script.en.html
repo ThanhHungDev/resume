@@ -1,0 +1,13 @@
+<!-- Javascript -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/typed.min.js"></script>
+<script src="/js/kube.min.js"></script>
+<script src="/js/site.min.js"></script>
+<script>
+    function newTyped(){}$(function(){$("#typed").typed({
+    // Change to edit type effect
+    // strings: [ "Là Web Developer", "Công tác tại nhật", "Trụ sở tại Shinjuku", "Định hướng tương lai..?!", "Quay về tp.HCM", "Nâng cấp mảng Mobile" ],
+    strings: [ "is Web Developer", "Workplaces in japan", "Based in Shinjuku" ],
+
+    typeSpeed:90,backDelay:700,contentType:"html",loop:!0,resetCallback:function(){newTyped()}}),$(".reset").click(function(){$("#typed").typed("reset")})});
+</script>
