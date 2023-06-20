@@ -47,7 +47,7 @@ gulp.task('js', function () {
         .pipe(gulp.dest(path.join(__dirname, '/dist/js/')))
 });
 gulp.task('fileinclude', function () {
-    return gulp.src(["src/*.html"])
+    return gulp.src(["src/**/*.html"])
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'
@@ -65,8 +65,8 @@ gulp.task('watch', function () {
         }
     });
     /// cấu hình html
-    gulp.watch('src/*.html', gulp.series('fileinclude')).on("change", browserSync.reload)
-    gulp.watch('src/partial/*.html', gulp.series('fileinclude')).on("change", browserSync.reload)
+    gulp.watch('src/**/*.html', gulp.series('fileinclude')).on("change", browserSync.reload)
+    gulp.watch('src/partial/**/*.html', gulp.series('fileinclude')).on("change", browserSync.reload)
     /// cấu hình cho js
     gulp.watch("src/javascript/**.js", gulp.series('js')).on("change", browserSync.reload)
     /// cấu hình cho scss

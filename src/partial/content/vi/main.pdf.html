@@ -1,0 +1,50 @@
+@@include('./introduction.html')
+@@include('./information.html')
+<!-- Work Experience -->
+<div class="work section second" id="experiences">
+    <div class="container">
+        <h1>
+            Quá trình<br />
+            Làm việc
+        </h1>
+        @@include('./experience/main.html')
+        @@include('./experience/other.pdf.html')
+    </div>
+  </div>  
+<!-- @@include('./objective.html') -->
+@@include('./education.html')
+@@include('./skill.html')
+<!-- @@include('./about.html') -->
+
+<footer>
+  <div class="container">
+      <div class="units-row">
+          <div class="unit-50">
+              <p>Trương thanh hùng web developer</p>
+          </div>
+          <div class="unit-50">
+              <ul class="social list-flat right">
+                  <li>
+                      <a href="mailto:thanhhung.dev@gmail.com"><i class="fa fa-send"></i></a>
+                  </li>
+                  <li>
+                      <a href="https://www.facebook.com/HungSmurf"><i class="fa fa-facebook-square"></i></a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<!-- 
+
+
+
+<a id="saveAsPdfBtn" href="https://www.sejda.com/html-to-pdf">Save as PDF</a>
+<script>
+document.getElementById('saveAsPdfBtn').addEventListener('click', function(e){
+var pageUrl = encodeURIComponent(window.location.href);
+window.open('https://www.sejda.com/html-to-pdf?save-link=' + pageUrl);
+e.preventDefault();
+});
+</script> -->
