@@ -57,7 +57,7 @@
 		width: 81px;
 		height: 81px;
 		border-radius: 99px;
-        @include Screen(MD){
+        @include Screen(SM){
             display: block;
             margin-left: auto;
             margin-right: auto;

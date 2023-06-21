@@ -2154,7 +2154,7 @@
 		},
 		isMobile: function()
 		{
-			var mq = window.matchMedia("(max-width: 767px)");
+			var mq = window.matchMedia("(max-width: 1000px)");
 			return (mq.matches) ? true : false;
 		}
 	};
@@ -2211,7 +2211,7 @@
 		// Initialization
 		init: function(el, options)
 		{
-			var mq = window.matchMedia("(max-width: 767px)");
+			var mq = window.matchMedia("(max-width: 1000px)");
 			if (mq.matches) return;
 
 			this.$element = el !== false ? $(el) : false;
@@ -2371,7 +2371,7 @@
 		},
 		build: function()
 		{
-			var mq = window.matchMedia("(max-width: 767px)");
+			var mq = window.matchMedia("(max-width: 1000px)");
 			if (mq.matches)
 			{
 				// hide
