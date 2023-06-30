@@ -536,6 +536,8 @@ $box-models: (
   n10px: -10px,
   ///negative
   10px: 10px,
+  15px: 15px,
+  20px: 20px,
   5px: 5px,
 ) !default;
 @each $key, $value in $box-models {
